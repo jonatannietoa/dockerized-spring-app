@@ -14,7 +14,7 @@
     </parent>
 
     <properties>
-        <docker.image.prefix>lepsec</docker.image.prefix>
+        <docker.image.prefix>jonatannietoa</docker.image.prefix>
         <java.version>1.8</java.version>
     </properties>
 
@@ -43,7 +43,7 @@
                 <version>0.2.3</version>
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <dockerDirectory>src/main/java/com/lepsec/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
