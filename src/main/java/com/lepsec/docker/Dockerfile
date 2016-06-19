@@ -4,7 +4,7 @@ FROM java:8
 RUN apt-get update
 RUN apt-get install -y maven
 
-WORKDIR /code
+WORKDIR /
 
 # Prepare by downloading dependencies
 ADD pom.xml /pom.xml
