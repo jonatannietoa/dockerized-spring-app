@@ -1,19 +1,5 @@
-FROM java:8
-
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
-
-WORKDIR /
-
-# Prepare by downloading dependencies
-ADD pom.xml pom.xml
-RUN ["mvn", "dependency:resolve"]
-RUN ["mvn", "verify"]
-
-# Adding source, compile and package into a fat jar
-ADD src src
-RUN ["mvn", "package"]
-
-EXPOSE 4567
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/app.jar"]
+FROM frolvlad/alpine-oraclejdk8:slim
+VOLUME /tmp
+ADD dockerized-spring-app-1.0.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
