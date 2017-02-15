@@ -18,7 +18,7 @@ public class IndexController {
     @RequestMapping("/")
     public String index() {
         try {
-            return "Spring Dockerized App v2.1 (Heroku CI and deploy), the host name is: " + InetAddress.getLocalHost().getHostName();
+            return "Spring Dockerized App, the host name is: " + InetAddress.getLocalHost().getHostName();
         } catch (UnknownHostException e) {
             if (logger.isErrorEnabled()){
                 logger.error("Index request error", e.getMessage());
