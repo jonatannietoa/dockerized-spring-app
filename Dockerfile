@@ -10,4 +10,4 @@ ADD . /usr/src/app
 
 RUN mvn install
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/spring-boot-service-1-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","target/dockerized-spring-app-1.1.0-SNAPSHOT.jar"]
